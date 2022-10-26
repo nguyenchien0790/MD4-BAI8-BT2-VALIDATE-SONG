@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<h1 align="center">LIST SONGS</h1>
+<a th:href="@{/create}">Add a new Song</a>
+<table border="1" style="width: 100%">
+
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SINGER</th>
+        <th>CATEGORY</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+    <tr th:each="sg : ${songs}">
+        <td th:text="${sg.getId()}"></td>
+        <td th:text="${sg.getName()}"></td>
+        <td th:text="${sg.getSinger()}"></td>
+        <td th:text="${sg.getCategory()}"></td>
+        <td><a th:href="@{'/edit/'+${sg.id}}">edit</a></td>
+        <td>DELETE</td>
+
+    </tr>
+
+
+</table>
+
+</body>
+</html>

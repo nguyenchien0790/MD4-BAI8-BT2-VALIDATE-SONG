@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>ADD A NEW SONG</h3>
+<p>
+    <a th:href="@{/}">
+        Back to list SONGS
+    </a>
+</p>
+<form th:action="@{/save}" th:object="${song}"
+      method="POST" novalidate="novalidate">
+    <input type="hidden" th:field="*{id}"/>
+    <div>
+        <label>Name</label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <div>
+        <label>Singer</label>
+        <input type="text" th:field="*{singer}"/>
+    </div>
+    <div>
+        <label>Category</label>
+        <input type="text" th:field="*{category}"/>
+    </div>
+    <input type="submit" value="Save" />
+</form>
+<!--<div>-->
+<!--    <div >-->
+<!--        <label>Name:</label>-->
+<!--        <label th:text="${song.getName()}"></label>-->
+<!--    </div>-->
+<!--    <div >-->
+<!--        <label>Price:</label>-->
+<!--        <label th:text="${song.getSinger()}"></label>-->
+<!--    </div>-->
+<!--    <div c>-->
+<!--        <label>Address:</label>-->
+<!--        <label th:text="${song.getCategory()}"></label>-->
+<!--    </div>-->
+<!--</div>-->
+
+</body>
+</html>
